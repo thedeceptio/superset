@@ -19,6 +19,7 @@
 
 from .dataset_validator import DatasetValidator
 from .pipeline import ValidationPipeline
+from .runtime import RuntimeValidator
 from .schema_validator import SchemaValidator
 
-__all__ = ["ValidationPipeline", "SchemaValidator", "DatasetValidator"]
+__all__ = ["ValidationPipeline", "SchemaValidator", "DatasetValidator", "RuntimeValidator"]
