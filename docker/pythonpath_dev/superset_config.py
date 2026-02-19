@@ -114,6 +114,12 @@ WEBDRIVER_BASEURL_USER_FRIENDLY = (
 )
 SQLLAB_CTAS_NO_LIMIT = True
 
+# LLM Chat Widget — credentials read from environment (set in docker/.env-local)
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openai")
+LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o")
+LLM_API_KEY = os.getenv("LLM_API_KEY")
+LLM_API_BASE = os.getenv("LLM_API_BASE")  # optional: Azure / Ollama base URL
+
 log_level_text = os.getenv("SUPERSET_LOG_LEVEL", "INFO")
 LOG_LEVEL = getattr(logging, log_level_text.upper(), logging.INFO)
 

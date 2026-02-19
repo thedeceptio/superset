@@ -39,6 +39,7 @@ import setupCodeOverrides from 'src/setup/setupCodeOverrides';
 import { logEvent } from 'src/logger/actions';
 import { store } from 'src/views/store';
 import ExtensionsStartup from 'src/extensions/ExtensionsStartup';
+import { ChatWidget } from 'src/features/mcpChat';
 import { RootContextProviders } from './RootContextProviders';
 import { ScrollToTop } from './ScrollToTop';
 
@@ -105,6 +106,7 @@ const App = () => (
         ))}
       </Switch>
       <ToastContainer />
+      <ChatWidget />
     </RootContextProviders>
   </Router>
 );

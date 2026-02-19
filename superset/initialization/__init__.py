@@ -233,6 +233,13 @@ class SupersetAppInitializer:  # pylint: disable=too-many-public-methods
 
         self.superset_app.register_blueprint(health_blueprint)
 
+        # Register LLM chat blueprint (exempt from CSRF — uses JWT auth)
+        from superset.extensions import csrf
+        from superset.views.mcp_chat import mcp_chat_bp
+
+        csrf.exempt(mcp_chat_bp)
+        self.superset_app.register_blueprint(mcp_chat_bp)
+
         #
         # Setup API views
         #
